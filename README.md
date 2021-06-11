@@ -7,6 +7,12 @@ This is the guideline I follow for working with C# language. My goal with this g
     + [Classes & Structs](#Classes%20&%20Structs)
     + [Interfaces](#Interfaces)
     + [Methods](#Methods)
+    + [Fields](#Fields)
+    + [Properties](#Properties)
+    + [Parameters](#Parameters)
+    + [Constants](#Constants)
+    + [Events & Delegates](#Events%20&%20Delegates)
+    + [Misc](#Misc)
 
 ## Nomenclature
 Nomenclature should be as per language guideline per [C# Coding Convention article by Microsoft](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions). This section contains some do and don'ts related to nomenclature.
@@ -124,3 +130,98 @@ private static void _do_something()
 
 }
 ```
+### Fields
+All field names should be written using **Camel Case**. This should also be applied to all public or static fields. For example
+```csharp
+public class MyClass
+{
+    public int myIntegerField;
+    public static string myStaticString;
+    int myPackagedField;
+    private int myPrivateInteger;
+    protected DateTime myProtectedDateTime;
+}
+```
+**DO:**
+```csharp
+public int myPublicIntegerField;
+```
+
+```csharp
+public static string firstName;
+```
+
+```csharp
+private string lastName;
+```
+
+**DONT:**
+```csharp
+private int _myInteger;
+```
+
+```csharp
+public int MyInteger;
+```
+
+```csharp
+public static int MY_INTEGER;
+```
+
+### Properties
+All property names should be written using **Pascal Case**. For example
+```csharp
+class MyClass
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string FullName { get => FirstName + LastName; }
+    // Property with backing field
+    private int pageNumber;
+    public int PageNumber
+    {
+        get { return pageNumber; }
+        set { pageNumber = value; }
+    }
+}
+```
+
+### Parameters
+All parameter names should be written in **Camel Case**. For example
+```csharp
+public class MyClass
+{
+    public MyClass(string firstName)
+    {
+
+    }
+
+    private void doSomething(string inputVariable)
+    {
+
+    }
+
+    public void DoSomethingElse(string myVariable)
+    {
+
+    }
+}
+```
+### Constants
+All constant names must be in **CAPITAL SNAKE CASE**. For example
+```csharp
+public const string SQS_QUEUE = "SQS_QUEUE";
+public const string MY_CONSTANT = "My Directory";
+```
+
+**DO:**
+```csharp
+public const string MY_CONSTANT = "My Directory";
+```
+**DONT:**
+```csharp
+public const string MyConstant = "My Directory";
+```
+
+### Events & Delegates
+### Misc
