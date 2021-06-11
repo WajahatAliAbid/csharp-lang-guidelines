@@ -4,14 +4,14 @@ This is the guideline I follow for working with C# language. My goal with this g
 ## Table of Contents
 - [Nomenclature](#Nomenclature)
     + [Namespaces](#Namespaces)
-    + [Classes & Structs](#Classes%20&%20Structs)
+    + [Classes & Structs](#Classes--Structs)
     + [Interfaces](#Interfaces)
     + [Methods](#Methods)
     + [Fields](#Fields)
     + [Properties](#Properties)
     + [Parameters](#Parameters)
     + [Constants](#Constants)
-    + [Events & Delegates](#Events%20&%20Delegates)
+    + [Events & Delegates](#Events--Delegates)
     + [Misc](#Misc)
 
 ## Nomenclature
