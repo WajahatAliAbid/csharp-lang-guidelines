@@ -60,8 +60,8 @@ Interface names should follow same convention as class and struct, but should be
 - IMySpecialClass
 
 ### Methods
-Method names should always be **Verbs** to denote that some work is being done by it. Method naming must follow following conventions
-- `public`, `internal` & `protected` method names must be written using **Pascal Case**
+Method names should always be **Verbs** to denote that some work is being done by it. Method naming should follow following conventions
+- `public`, `internal` & `protected` method names should be written using **Pascal Case**
 - `private` method names should be written using **Camel Case**
 
 Same rules should be applied to `static` counterparts.
@@ -208,7 +208,7 @@ public class MyClass
 }
 ```
 ### Constants
-All constant names must be in **CAPITAL SNAKE CASE**. For example
+All constant names should be in **CAPITAL SNAKE CASE**. For example
 ```csharp
 public const string SQS_QUEUE = "SQS_QUEUE";
 public const string MY_CONSTANT = "My Directory";
@@ -224,4 +224,41 @@ public const string MyConstant = "My Directory";
 ```
 
 ### Events & Delegates
+Delegates and events should follow same guidelines as Methods. For example
+
+```csharp
+public delegate void DoSomething(string value);
+private delegate void doSomething(string value);
+
+public event Action<int> IntegerValueChanged;
+private event Action<string> stringValueChanged;
+```
 ### Misc
+Aside from namespaces, Acrnoyms should be treated as normal words. For example
+```csharp
+public XmlHttpRequest request;
+String url;
+```
+**DO:**
+```csharp
+class XmlHttpRequest
+{
+
+}
+```
+
+```csharp
+public string Url { get; set; } 
+```
+
+**DONT:**
+```csharp
+class XMLHTTPRequest
+{
+    
+}
+```
+
+```csharp
+public string URL { get; set; } 
+```
