@@ -16,32 +16,32 @@ Namespaces should be all **Pascal Case**, without the use of hyphens (-) or unde
 
 **DO:**
 ```csharp
-Zen.Infrastructure.Core
+namespace Zen.Infrastructure.Core
 ```
 
 ```csharp
-ZenInfrastructure.Core
+namespace ZenInfrastructure.Core
 ```
 
 ```csharp
-Zen.Infrastructure.GUI
+namespace Zen.Infrastructure.GUI
 ```
 
 **DONT:**
 ```csharp
-zen.infrastructure.core
+namespace zen.infrastructure.core
 ```
 
 ```csharp
-Zen.Infrastructure.gui
+namespace Zen.Infrastructure.gui
 ```
 
 ```csharp
-zen_infrastructure.core
+namespace zen_infrastructure.core
 ```
 
 ```csharp
-zenInfrastructure.core
+namespace zenInfrastructure.core
 ```
 ### Classes & Structs
 Class and struct names should always be **Pascal Case** and should always be **Nouns** to denote that it is an entity. For Example
