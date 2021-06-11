@@ -10,7 +10,7 @@ Nomenclature should be as per language guideline per [C# Coding Convention artic
 ### Namespaces
 Namespaces should be all *Pascal Case*, without the use of hyphens (-) or underscores (_). The only exception to this rule are acronyms like GUI or HTTP.
 
-*DO:*
+**DO:**
 ```csharp
 Zen.Infrastructure.Core
 ```
@@ -23,7 +23,7 @@ ZenInfrastructure.Core
 Zen.Infrastructure.GUI
 ```
 
-*DONT:*
+**DONT:**
 ```csharp
 zen.infrastructure.core
 ```
