@@ -13,6 +13,7 @@ This is the guideline I follow for working with C# language. My goal with this g
     + [Constants](#Constants)
     + [Events & Delegates](#Events--Delegates)
     + [Misc](#Misc)
+- [Code Style](#Code--Style)
 
 ## Nomenclature
 Nomenclature should be as per language guideline per [C# Coding Convention article by Microsoft](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions). This section contains some do and don'ts related to nomenclature.
@@ -262,3 +263,20 @@ class XMLHTTPRequest
 ```csharp
 public string URL { get; set; } 
 ```
+
+Avoid using random names for variables, classes and methods etc. Use concise variable names which are readable and easy to understand.
+
+**DO:**
+```csharp
+int row, column;
+var array = new int[row][column];
+```
+
+**DONT:**
+```csharp
+int i, j;
+var arr = new int[i][j];
+```
+
+## Code Style
+This section covers the code styling guidelines to make the code more readable and understandable. 
