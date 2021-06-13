@@ -16,6 +16,7 @@ This is the guideline I follow for working with C# language. My goal with this g
 - [Code Style](#Code--Style)
     + [Brace Style](#Brace-Style)
     + [Spacing & Indentation](#Spacing--Indentation)
+- [Code Documentation](#Code-Documentation)
 
 ## Nomenclature
 Nomenclature should be as per language guideline per [C# Coding Convention article by Microsoft](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions). This section contains some do and don'ts related to nomenclature.
@@ -342,3 +343,126 @@ class MyClass
   }
 }
 ```
+
+### Statements & Declarations
+Write only one statement per line
+
+**DO:**
+```csharp
+doSomething();
+doSomethingElse();
+```
+
+**DONT:**
+```csharp
+doSomething(); doSomethingElse();
+```
+
+Write only one declaration per line
+**DO:**
+```csharp
+string firstName;
+string lastName;
+```
+
+**DONT:**
+```csharp
+string firstName, lastNmae;
+```
+
+### Implicitly Typed Local Variables
+Use `var` for local variables declaration when type of the variable is obvious from the right side of the assignment. 
+**DO:**
+```csharp
+var firstName = "John";
+var number = 1;
+```
+
+Don't use var when type is not apparent from the right side of the assignment. 
+**DONT:***
+```csharp
+int result = ExampleClass.CalculateResult();
+```
+Don't rely on variable name to specify the type of variable. For example, in the following example, number is a string rather than an int.
+**DONT:***
+```csharp
+var number = Console.ReadLine()
+```
+### Delegates
+Use [built-in delegate types](https://docs.microsoft.com/en-us/dotnet/standard/delegates-lambdas) `Func<>`, `Action<>` and `Predicate<>` instead of defining custom delegate types. 
+**DO:**
+```csharp
+Action<string> print = value => Console.WriteLine($"Value is {value}"); 
+```
+### Exceptions
+C# provides a whole slew of built in exception types. Try to use these exception types whenever appropriate. 
+**DO:**
+```csharp
+void DoSomething(string input)
+{
+    if(string.IsNullOrWhiteSpace(input))
+    {
+        throw new ArgumentNullException(nameof(input));
+    }
+}
+```
+
+In certain cases, the built in exceptions do not do enough for you or make sense of what you are trying to do. C# provides ability to create custom exceptions by extending from `Exception` class. So you should create custom exceptions which make sense in your business application.
+**DO:**
+```csharp
+class TransactionNotFoundException : Exception
+{
+    public TransactionNotFoundException(Guid id) : base($"Transaction not found for id: {id}")
+    {
+        
+    }
+}
+public async Task<Transaction> GetTransactionAsync(Guid id)
+{
+    Transaction transaction = await api.GetTransactionAsync(id);
+    if(transaction is null)
+        throw new TransactionNotFoundException(id); 
+}
+```
+### Event Handling
+If you're defining an event handler that you don't need to remove later, use a lambda expression.
+**DO:**
+```csharp
+public MyWorker()
+{
+    this.OnApplicationStop = (sender, event) => 
+    {
+        try
+        {
+            connection.Dispose();
+        }
+        catch (ObjectDisposedException)
+        {
+        }
+    }
+}
+```
+
+### Disposable Classes
+Properly deallocate resources by using `using` statement with disposable classes. 
+**DO:**
+```csharp
+using(MemoryStream stream = new MemoryStream())
+{
+    // work with memory stream
+}
+```
+
+If you do not want to dispose the class readily, then you can call dispose function later on. When using `Dispose()` function, be sure to catch `ObjectDisposedException` just in case the object has been disposed off by external entity. This can happen when using Dependency Inection containers.
+
+```csharp
+try
+{
+    connection.Dispose();
+}
+catch (ObjectDisposedException)
+{
+}
+```
+## Code Documentation
+TODO
