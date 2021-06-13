@@ -16,6 +16,12 @@ This is the guideline I follow for working with C# language. My goal with this g
 - [Code Style](#Code--Style)
     + [Brace Style](#Brace-Style)
     + [Spacing & Indentation](#Spacing--Indentation)
+    + [Statements & Declarations](#Statements--Declarations)
+    + [Implicitly Typed Local Variables](#Implicitly-Typed-Local-Variables)
+    + [Delegates](#Delegates)
+    + [Exceptions](#Exceptions)
+    + [Event Handling](#Event-Handling)
+    + [Disposable Classes](#Disposable-Classes)
 - [Code Documentation](#Code-Documentation)
 
 ## Nomenclature
