@@ -11,6 +11,7 @@ This is the guideline I follow for working with C# language. My goal with this g
     + [Properties](#Properties)
     + [Parameters](#Parameters)
     + [Constants](#Constants)
+    + [Attributes](#Attributes)
     + [Events & Delegates](#Events--Delegates)
     + [Misc](#Misc)
 - [Code Style](#Code--Style)
@@ -231,6 +232,18 @@ public const string MY_CONSTANT = "My Directory";
 **DONT:**
 ```csharp
 public const string MyConstant = "My Directory";
+```
+
+### Attributes
+Attribute names should end with word Attribute
+
+**DO:**
+```csharp
+[AttributeUsage(AttributeTargets.Property)]
+public class RequiredPropertyAttribute : Attribute
+{
+
+}
 ```
 
 ### Events & Delegates
