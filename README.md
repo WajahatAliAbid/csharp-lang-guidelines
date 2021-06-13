@@ -14,6 +14,8 @@ This is the guideline I follow for working with C# language. My goal with this g
     + [Events & Delegates](#Events--Delegates)
     + [Misc](#Misc)
 - [Code Style](#Code--Style)
+    + [Brace Style](#Brace-Style)
+    + [Spacing & Indentation](#Spacing--Indentation)
 
 ## Nomenclature
 Nomenclature should be as per language guideline per [C# Coding Convention article by Microsoft](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions). This section contains some do and don'ts related to nomenclature.
@@ -280,3 +282,63 @@ var arr = new int[i][j];
 
 ## Code Style
 This section covers the code styling guidelines to make the code more readable and understandable. 
+
+### Brace Style
+All braces should get their own lines as per C# convention
+
+**DO:**
+```csharp
+class MyClass
+{
+    void DoSomething(bool input)
+    {
+        if(input)
+        {
+
+        }
+        else
+        {
+
+        }
+    }
+}
+```
+
+**DONT:**
+```csharp
+class MyClass {
+    void DoSomething(bool input) {
+        if(input) {
+
+        }
+        else {
+
+        }
+    }
+}
+```
+
+### Spacing & Indentation
+Spacing and indentation should be consistent througout the code. Tab size should use **4 spaces** and indentation should use tabs over spaces for better readability
+
+**DO:**
+```csharp
+class MyClass
+{
+    void DoSomething()
+    {
+
+    }
+}
+```
+
+**DONT:**
+```csharp
+class MyClass
+{
+  void DoSomething()
+  {
+
+  }
+}
+```
