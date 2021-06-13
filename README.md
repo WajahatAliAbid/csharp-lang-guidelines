@@ -365,6 +365,7 @@ doSomething(); doSomethingElse();
 ```
 
 Write only one declaration per line
+
 **DO:**
 ```csharp
 string firstName;
@@ -378,6 +379,7 @@ string firstName, lastNmae;
 
 ### Implicitly Typed Local Variables
 Use `var` for local variables declaration when type of the variable is obvious from the right side of the assignment. 
+
 **DO:**
 ```csharp
 var firstName = "John";
@@ -385,23 +387,28 @@ var number = 1;
 ```
 
 Don't use var when type is not apparent from the right side of the assignment. 
+
 **DONT:***
 ```csharp
 int result = ExampleClass.CalculateResult();
 ```
+
 Don't rely on variable name to specify the type of variable. For example, in the following example, number is a string rather than an int.
+
 **DONT:***
 ```csharp
 var number = Console.ReadLine()
 ```
 ### Delegates
 Use [built-in delegate types](https://docs.microsoft.com/en-us/dotnet/standard/delegates-lambdas) `Func<>`, `Action<>` and `Predicate<>` instead of defining custom delegate types. 
+
 **DO:**
 ```csharp
 Action<string> print = value => Console.WriteLine($"Value is {value}"); 
 ```
 ### Exceptions
 C# provides a whole slew of built in exception types. Try to use these exception types whenever appropriate. 
+
 **DO:**
 ```csharp
 void DoSomething(string input)
@@ -414,6 +421,7 @@ void DoSomething(string input)
 ```
 
 In certain cases, the built in exceptions do not do enough for you or make sense of what you are trying to do. C# provides ability to create custom exceptions by extending from `Exception` class. So you should create custom exceptions which make sense in your business application.
+
 **DO:**
 ```csharp
 class TransactionNotFoundException : Exception
@@ -432,6 +440,7 @@ public async Task<Transaction> GetTransactionAsync(Guid id)
 ```
 ### Event Handling
 If you're defining an event handler that you don't need to remove later, use a lambda expression.
+
 **DO:**
 ```csharp
 public MyWorker()
@@ -451,6 +460,7 @@ public MyWorker()
 
 ### Disposable Classes
 Properly deallocate resources by using `using` statement with disposable classes. 
+
 **DO:**
 ```csharp
 using(MemoryStream stream = new MemoryStream())
@@ -461,6 +471,7 @@ using(MemoryStream stream = new MemoryStream())
 
 If you do not want to dispose the class readily, then you can call dispose function later on. When using `Dispose()` function, be sure to catch `ObjectDisposedException` just in case the object has been disposed off by external entity. This can happen when using Dependency Inection containers.
 
+**DO:**
 ```csharp
 try
 {
