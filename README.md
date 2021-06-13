@@ -23,7 +23,7 @@ This is the guideline I follow for working with C# language. My goal with this g
     + [Exceptions](#Exceptions)
     + [Event Handling](#Event-Handling)
     + [Disposable Classes](#Disposable-Classes)
-- [Code Documentation](#Code-Documentation)
+- [Code Documentation](./Code%20Documentation)
 
 ## Nomenclature
 Nomenclature should be as per language guideline per [C# Coding Convention article by Microsoft](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions). This section contains some do and don'ts related to nomenclature.
@@ -494,5 +494,3 @@ catch (ObjectDisposedException)
 {
 }
 ```
-## Code Documentation
-TODO
